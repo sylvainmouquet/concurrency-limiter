@@ -5,22 +5,7 @@ Concurrency-Limiter is a python decorator to limit the number of concurrent exec
 ### Demonstration:
 
 ```python
-from reattempt import reattempt
 
-@reattempt(max_retries=5, min_time=0.1, max_time=2)
-def simulate_network_failure():
-    raise Exception("Connection timeout")
-
-if __name__ == "__main__":
-    simulate_network_failure()
-
-------------------------------------------------------- live log call -------------------------------------------------------
-WARNING  root:__init__.py:167 [RETRY] Attempt 1/5 failed, retrying in 0.17 seconds...
-WARNING  root:__init__.py:167 [RETRY] Attempt 2/5 failed, retrying in 0.19 seconds...
-WARNING  root:__init__.py:167 [RETRY] Attempt 3/5 failed, retrying in 0.19 seconds...
-WARNING  root:__init__.py:167 [RETRY] Attempt 4/5 failed, retrying in 0.19 seconds...
-WARNING  root:__init__.py:163 [RETRY] Attempt 5/5 failed, stopping
-ERROR    root:__init__.py:177 [RETRY] Max retries reached
 ```
 
 ## Table of Contents
@@ -35,15 +20,15 @@ ERROR    root:__init__.py:177 [RETRY] Max retries reached
 
 ## Description
 
-ReAttempt is a Python library that provides a decorator to automatically retry a function when exceptions are raised. It uses an exponential backoff strategy to wait between retries, ensuring that the function has multiple chances to succeed before ultimately failing.
+Concurrency-Limiter is a Python library that provides a decorator to limit the number of concurrent executions in asyncio.gather. This ensures that your asynchronous tasks do not overwhelm system resources, allowing for better control over concurrency and improved performance in applications that rely on asynchronous operations.
 
 ## Installation
 
 ```bash
 # Install the dependency
-pip install reattempt
-uv add reattempt
-poetry add reattempt
+pip install concurrency-limiter
+uv add concurrency-limiter
+poetry add concurrency-limiter
 ```
 
 ## Usage
