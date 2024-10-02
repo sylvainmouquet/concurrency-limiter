@@ -1,0 +1,52 @@
+[project]
+name = "concurrency-limiter"
+version = "0.0.1"
+description = "Limit the number of concurrent executions in asyncio.gather"
+authors = [{name = "Sylvain Mouquet", email = "sylvain.mouquet@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+]
+license = { text = "MIT" }
+url = "https://github.com/sylvainmouquet/concurrency_limiter"
+keywords = ["retry", "decorator", "python", "exponential backoff", "exception handling", "sync", "async", "generator", "async gen"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[project.urls]
+homepage = "https://github.com/sylvainmouquet/concurrency-limiter"
+documentation = "https://github.com/sylvainmouquet/concurrency-limiter"
+repository = "https://github.com/sylvainmouquet/concurrency-limiter"
+changelog = "https://github.com/sylvainmouquet/concurrency-limiter/releases"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+    "aiohttp>=3.10.6",
+    "pip>=24.2",
+    "pytest>=8.3.3",
+    "pytest-asyncio>=0.24.0",
+    "pytest-mock>=3.14.0",
+    "ruff>=0.6.7",
+    "loguru>=0.7.2",
+]
+
+[tool.uv.sources]
+concurrency-limiter = { path = "concurrency_limiter" }
+
+[tool.hatch.build.targets.wheel]
+packages = ["concurrency_limiter"]
