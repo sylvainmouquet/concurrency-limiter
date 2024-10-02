@@ -8,7 +8,7 @@ requires-python = ">=3.9"
 dependencies = [
 ]
 license = { text = "MIT" }
-url = "https://github.com/sylvainmouquet/reattempt"
+url = "https://github.com/sylvainmouquet/concurrency_limiter"
 keywords = ["retry", "decorator", "python", "exponential backoff", "exception handling", "sync", "async", "generator", "async gen"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -24,10 +24,10 @@ classifiers = [
 ]
 
 [project.urls]
-homepage = "https://github.com/sylvainmouquet/reattempt"
-documentation = "https://github.com/sylvainmouquet/reattempt"
-repository = "https://github.com/sylvainmouquet/reattempt"
-changelog = "https://github.com/sylvainmouquet/reattempt/releases"
+homepage = "https://github.com/sylvainmouquet/concurrency_limiter"
+documentation = "https://github.com/sylvainmouquet/concurrency_limiter"
+repository = "https://github.com/sylvainmouquet/concurrency_limiter"
+changelog = "https://github.com/sylvainmouquet/concurrency_limiter/releases"
 
 
 [build-system]
