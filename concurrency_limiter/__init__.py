@@ -1,7 +1,12 @@
+__version__ = "1.1.0"
+__all__ = ("__version__", "concurrency_limiter")
+
+
 import asyncio
 
 from datetime import datetime, timezone
 import logging
+
 
 logger = logging.getLogger("concurrency-limiter")
 logger.addHandler(logging.NullHandler())

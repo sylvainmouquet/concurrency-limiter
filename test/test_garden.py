@@ -3,7 +3,6 @@ import pytest
 from concurrency_limiter import concurrency_limiter
 import random
 import logging
-from progress.bar import Bar
 
 logging.basicConfig()
 logging.getLogger("concurrency-limiter").setLevel(logging.DEBUG)
@@ -11,12 +10,9 @@ logging.getLogger("concurrency-limiter").setLevel(logging.DEBUG)
 # List of flowers for our examples
 flowers = ["Rose", "Tulip", "Sunflower", "Daisy", "Lily"]
 
-bar = Bar('Processing', max=5)
 
 @concurrency_limiter(max_concurrent=3)
 async def plant_flower():
-    bar.next()
-
     flower = random.choice(flowers)
     print(f"Attempting to plant a {flower}")
     await asyncio.sleep(0.1)  # Simulating planting time
