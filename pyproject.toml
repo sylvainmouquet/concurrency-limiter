@@ -1,7 +1,7 @@
 [project]
 name = "concurrency-limiter"
 version = "0.0.1"
-description = "Retrying a python function when exceptions are raised"
+description = "Limit the number of concurrent executions in asyncio.gather"
 authors = [{name = "Sylvain Mouquet", email = "sylvain.mouquet@gmail.com"}]
 readme = "README.md"
 requires-python = ">=3.9"
@@ -24,10 +24,10 @@ classifiers = [
 ]
 
 [project.urls]
-homepage = "https://github.com/sylvainmouquet/concurrency_limiter"
-documentation = "https://github.com/sylvainmouquet/concurrency_limiter"
-repository = "https://github.com/sylvainmouquet/concurrency_limiter"
-changelog = "https://github.com/sylvainmouquet/concurrency_limiter/releases"
+homepage = "https://github.com/sylvainmouquet/concurrency-limiter"
+documentation = "https://github.com/sylvainmouquet/concurrency-limiter"
+repository = "https://github.com/sylvainmouquet/concurrency-limiter"
+changelog = "https://github.com/sylvainmouquet/concurrency-limiter/releases"
 
 
 [build-system]
