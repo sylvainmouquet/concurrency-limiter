@@ -3,6 +3,11 @@ import pytest
 from concurrency_limiter import concurrency_limiter
 from loguru import logger
 
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger("concurrency-limiter")
+logger.setLevel(logging.DEBUG)
 
 @pytest.mark.asyncio
 async def test_concurrency_limiter():
