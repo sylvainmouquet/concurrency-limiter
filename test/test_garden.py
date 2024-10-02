@@ -4,7 +4,7 @@ from concurrency_limiter import concurrency_limiter
 import random
 import logging
 
-logging.basicConfig()
+logging.basicConfig(level=logging.DEBUG)
 logging.getLogger("concurrency-limiter").setLevel(logging.DEBUG)
 
 # List of flowers for our examples

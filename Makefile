@@ -52,9 +52,9 @@ install-local:
 test:
 	@echo "Modified arguments: $(new_args)"
 	@if [ -z "$(COMMAND_ARGS)" ]; then \
-		uv run pytest -v --log-cli-level=INFO; \
+		uv run pytest -v --log-cli-level=DEBUG; \
 	else \
-		uv run pytest -v --log-cli-level=INFO $(new_args); \
+		uv run pytest -v --log-cli-level=DEBUG $(new_args); \
 	fi
 
 # Lint command

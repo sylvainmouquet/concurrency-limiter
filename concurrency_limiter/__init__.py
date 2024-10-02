@@ -3,10 +3,7 @@ __all__ = ("__version__", "concurrency_limiter")
 
 
 import asyncio
-
-from datetime import datetime, timezone
 import logging
-
 
 logger = logging.getLogger("concurrency-limiter")
 logger.addHandler(logging.NullHandler())
@@ -59,13 +56,9 @@ def concurrency_limiter(max_concurrent: int):
 
         async def wrapper(*args, **kwargs):
             if semaphore.locked():  # Check if the semaphore is activated
-                logger.info(
-                    f"waiting function: {func.__name__} timestamp: {datetime.now(timezone.utc)} {semaphore}"
-                )
+                logger.info(f"[WAITING] func: {func.__name__} - {semaphore}")
             async with semaphore:
-                logger.info(
-                    f"run function: {func.__name__} timestamp: {datetime.now(timezone.utc)} {semaphore}"
-                )
+                logger.debug(f"[RUNNING] func: {func.__name__} - {semaphore}")
                 return await func(*args, **kwargs)
 
         return wrapper
