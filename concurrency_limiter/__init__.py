@@ -6,6 +6,7 @@ import logging
 logger = logging.getLogger("concurrency-limiter")
 logger.addHandler(logging.NullHandler())
 
+
 def concurrency_limiter(max_concurrent: int):
     """
     Limit the number of concurrent calls to the decorated function.
@@ -37,7 +38,7 @@ def concurrency_limiter(max_concurrent: int):
         # asyncio.run(main())
     """
 
-    semaphore = asyncio.Semaphore(max_concurrent)
+    semaphore = asyncio.BoundedSemaphore(max_concurrent)
 
     def _concurrency_limiter(func):
         """
@@ -50,9 +51,16 @@ def concurrency_limiter(max_concurrent: int):
         Returns:
             callable: The wrapped function with concurrency control.
         """
+
         async def wrapper(*args, **kwargs):
+            if semaphore.locked():  # Check if the semaphore is activated
+                logger.info(
+                    f"waiting function: {func.__name__} timestamp: {datetime.now(timezone.utc)} {semaphore}"
+                )
             async with semaphore:
-                logger.info(f"function: {func.__name__} timestamp: {datetime.now(timezone.utc)}")
+                logger.info(
+                    f"run function: {func.__name__} timestamp: {datetime.now(timezone.utc)} {semaphore}"
+                )
                 return await func(*args, **kwargs)
 
         return wrapper

@@ -41,11 +41,12 @@ dev-dependencies = [
     "pytest>=8.3.3",
     "pytest-asyncio>=0.24.0",
     "pytest-mock>=3.14.0",
-    "ruff>=0.6.7"
+    "ruff>=0.6.7",
+    "loguru>=0.7.2",
 ]
 
 [tool.uv.sources]
-reattempt = { path = "reattempt" }
+concurrency-limiter = { path = "concurrency_limiter" }
 
 [tool.hatch.build.targets.wheel]
-packages = ["reattempt"]
+packages = ["concurrency_limiter"]
