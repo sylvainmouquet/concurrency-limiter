@@ -10,7 +10,7 @@ logging.getLogger("concurrency-limiter").setLevel(logging.DEBUG)
 
 @pytest.mark.asyncio
 async def test_concurrency_limiter():
-    @concurrency_limiter(max_concurrent=3)
+    @concurrency_limiter(max_concurrent=1)
     async def fetch_data(id):
         logger.info(f"Fetch data: {id}")
         fetch_data.calls += 1  # type:ignore
