@@ -5,9 +5,8 @@ from loguru import logger
 
 import logging
 
-logging.basicConfig(level=logging.DEBUG)
-logger = logging.getLogger("concurrency-limiter")
-logger.setLevel(logging.DEBUG)
+logging.basicConfig()
+logging.getLogger("concurrency-limiter").setLevel(logging.DEBUG)
 
 @pytest.mark.asyncio
 async def test_concurrency_limiter():
