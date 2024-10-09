@@ -1,6 +1,6 @@
 [project]
 name = "concurrency-limiter"
-version = "0.0.1"
+version = "1.0.0"
 description = "Limit the number of concurrent executions in asyncio.gather"
 authors = [{name = "Sylvain Mouquet", email = "sylvain.mouquet@gmail.com"}]
 readme = "README.md"
